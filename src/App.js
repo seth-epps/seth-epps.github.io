@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
-import { Footer } from "./components/Footer/Footer";
+import { Main } from "./pages/Main/Main";
 
 const MainContent = styled.div`
-	display: flex;
-  flex: 1 1 auto;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 	background-color: #282c34;
-	height: 100%;
+	height: 100vh;
 	overflow: hidden;
 	position: relative;
 `;
@@ -16,12 +15,7 @@ const MainContent = styled.div`
 function App() {
   return (
     <MainContent>
-      <header>
-        <div>
-          Seth Epps
-        </div>
-      </header>
-      <Footer/>
+      <Main/>
     </MainContent>
   );
 }

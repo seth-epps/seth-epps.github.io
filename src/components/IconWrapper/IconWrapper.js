@@ -2,45 +2,56 @@ import React from "react";
 import styled from "styled-components";
 import mediaHelper from "../../util/mediaHelper";
 
-const CONSTANTS = {
-    DESKTOP: "DESKTOP",
-    TABLET: "TABLET",
-    MOBILE: "MOBILE"
-};
-
 const ICON_SIZES = {
-    DESKTOP: 60,
-    TABLET: 40,
+    DESKTOP: 35,
+    TABLET: 25,
     MOBILE: 20
 };
 
-const getRelativeCircleSize = (iconSize) => {
-
-    return `
-    height: ${ICON_SIZES[iconSize]}px;
-    width: ${ICON_SIZES[iconSize]}px;
-    line-height: ${ICON_SIZES[iconSize]}px;
-
-    border-radius: ${ICON_SIZES[iconSize]/2}px
-`
-};
+const FONT_SIZES = {
+    DESKTOP: 15,
+    TABLET: 10.7,
+    MOBILE: 8.6
+}
 
 const CircleWrapper = styled.div`
     display: block;
-    font-size: 1rem;
-    ${mediaHelper.DESKTOP} {
-        ${getRelativeCircleSize(CONSTANTS.DESKTOP)}
+
+    height: ${ICON_SIZES.DESKTOP}px;
+    width: ${ICON_SIZES.DESKTOP}px;
+    line-height: ${ICON_SIZES.DESKTOP}px;
+    font-size: ${FONT_SIZES.DESKTOP}px;
+
+    text-align: center;
+    border: 1px white solid;
+    border-radius: 50%;
+
+    transition: 200ms;
+
+    margin-right: 5px;
+    &: hover {
+        color: grey;
+        border-color: grey;
     }
-    ${mediaHelper.TABLET} {
-        ${getRelativeCircleSize(CONSTANTS.TABLET)}
-    }
-    ${mediaHelper.MOBILE} {
-        ${getRelativeCircleSize(CONSTANTS.MOBILE)}
-    }
+
+    ${mediaHelper.TABLET`
+        height: ${ICON_SIZES.TABLET}px;
+        width: ${ICON_SIZES.TABLET}px;
+        line-height: ${ICON_SIZES.TABLET}px;
+        font-size: ${FONT_SIZES.TABLET}px;
+    `}
+
+    ${mediaHelper.MOBILE`
+        height: ${ICON_SIZES.MOBILE}px;
+        width: ${ICON_SIZES.MOBILE}px;
+        line-height: ${ICON_SIZES.MOBILE}px;
+        font-size: ${FONT_SIZES.MOBILE}px;
+    `}
+
 `;
 
-export const IconWrapper = ({children}) => (
-    <CircleWrapper>
+export const IconWrapper = ({refLink, children}) => (
+    <CircleWrapper onClick={()=> window.location.href = refLink}>
         {children}
     </CircleWrapper>
 );
