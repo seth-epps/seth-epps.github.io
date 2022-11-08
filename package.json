@@ -1,7 +1,7 @@
 {
-  "name": "sepps14.github.io",
+  "name": "seth-epps.github.io",
   "version": "0.1.0",
-  "homepage": "https://sepps14.github.io/",
+  "homepage": "https://seth-epps.github.io/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.25",

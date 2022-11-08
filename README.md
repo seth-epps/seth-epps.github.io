@@ -1,2 +1,2 @@
-# sepps14.github.io
+# seth-epps.github.io
 Personal Website for fun and public

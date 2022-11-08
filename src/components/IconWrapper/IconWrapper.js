@@ -51,7 +51,7 @@ const CircleWrapper = styled.div`
 `;
 
 export const IconWrapper = ({refLink, children}) => (
-    <CircleWrapper onClick={()=> window.location.href = refLink}>
+    <CircleWrapper onClick={()=> window.open(refLink, '_blank')}>
         {children}
     </CircleWrapper>
 );
